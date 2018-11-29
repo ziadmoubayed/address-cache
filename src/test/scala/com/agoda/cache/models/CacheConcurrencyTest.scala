@@ -6,11 +6,7 @@ import java.util.concurrent.CountDownLatch
 import com.agoda.cache.AddressCache
 import org.scalatest.{FlatSpec, Matchers}
 
-import scala.concurrent.Future
-import scala.concurrent.duration.{MINUTES, SECONDS}
-import scala.concurrent.duration._
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.reflect.internal.util.Collections
+import scala.concurrent.duration.{MINUTES, SECONDS, _}
 
 class CacheConcurrencyTest extends FlatSpec with Matchers {
 

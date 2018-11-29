@@ -9,8 +9,8 @@ import scala.concurrent.{Await, Future, TimeoutException}
 
 class CacheBasicTest extends FlatSpec with Matchers {
 
-  import scala.concurrent.duration._
   import scala.concurrent.ExecutionContext.Implicits.global
+  import scala.concurrent.duration._
 
   "An AddressCache" should "return values in last-in-first-out order" in {
     val cache = new AddressCache(1, MINUTES)
@@ -38,14 +38,14 @@ class CacheBasicTest extends FlatSpec with Matchers {
   "Remove" should "return true if element was removed" in {
     val cache = new AddressCache(1, MINUTES)
     cache.add(InetAddress.getByName("1.2.3.4")) should be(true)
-    cache.remove(InetAddress.getByName("1.2.3.4")) should be (true)
+    cache.remove(InetAddress.getByName("1.2.3.4")) should be(true)
     cache.peek() shouldBe None
   }
 
   it should "return false if element does not exist" in {
     val cache = new AddressCache(1, MINUTES)
     cache.add(InetAddress.getByName("1.2.3.4")) should be(true)
-    cache.remove(InetAddress.getByName("1.2.3.40")) should be (false)
+    cache.remove(InetAddress.getByName("1.2.3.40")) should be(false)
     cache.peek() shouldBe Some(InetAddress.getByName("1.2.3.4"))
   }
 

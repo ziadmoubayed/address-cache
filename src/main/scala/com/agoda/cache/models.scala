@@ -30,4 +30,5 @@ package object models {
       return (expiry < System.currentTimeMillis())
     }
   }
+
 }
