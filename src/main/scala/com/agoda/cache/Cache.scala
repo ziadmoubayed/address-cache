@@ -31,7 +31,7 @@ trait Cache[T] {
     *
     * @return
     */
-  def peek(): T
+  def peek(): Option[T]
 
   /**
     * take() method retrieves and removes the most recently added element from
